@@ -15,53 +15,23 @@ const metodeBayar = [
         id    : "qris",
         nama  : "QRIS",
         sub   : "Scan QR — semua e-wallet & m-banking",
-        emoji : "📲",
+        icon  : "bi-qr-code-scan",
         detail: `
-        <div style="text-align:center;padding:16px 0;">
-            <div style="
-                display:inline-block;
-                padding:12px;
-                background:#fff;
-                border:3px solid #0D2350;
-                border-radius:16px;
-                margin-bottom:12px;
-            ">
-                <img src="img/qris.jpeg" alt="QRIS" style="
-                    width:180px;
-                    height:auto;
-                    display:block;
-                    border-radius:8px;
-                ">
+        <div class="qris-detail">
+            <div class="qris-frame">
+                <img src="img/qris.jpeg" alt="QRIS">
             </div>
 
-            <div style="
-                font-size:13px;
-                font-weight:800;
-                color:#1E1033;
-                margin-bottom:4px;
-            ">
-                MAINPS.ID — PlayStation Lounge
-            </div>
+            <div class="qris-title">MAINPS.ID — PlayStation Lounge</div>
 
-            <div style="
-                font-size:12px;
-                color:#9580B8;
-            ">
+            <div class="qris-sub">
                 Scan dengan GoPay · OVO · Dana · ShopeePay
                 <br>
                 atau m-Banking manapun
             </div>
 
-            <div style="
-                margin-top:12px;
-                padding:8px 16px;
-                background:#EDE9FE;
-                border-radius:8px;
-                font-size:12px;
-                color:#7C3AED;
-                font-weight:700;
-            ">
-                ⚠️ Nominal sesuai Total Bayar di ringkasan
+            <div class="pay-note pay-note-info">
+                <i class="bi bi-exclamation-triangle-fill"></i> Nominal sesuai Total Bayar di ringkasan
             </div>
         </div>
     `
@@ -70,37 +40,29 @@ const metodeBayar = [
         id    : "transfer",
         nama  : "Transfer Bank",
         sub   : "BCA · BRI · Mandiri · BNI",
-        emoji : "🏦",
+        icon  : "bi-bank",
         detail: `
-            <div style="padding:4px 0;">
-                <div style="font-size:12px;font-weight:800;color:#9580B8;
-                            font-family:'Space Mono',monospace;letter-spacing:.1em;margin-bottom:12px;">
-                    PILIH BANK TUJUAN
-                </div>
+            <div>
+                <div class="bank-label">PILIH BANK TUJUAN</div>
                 ${[
                     { bank:"BCA",rek:"007355522468",   an:"MAINPS ID LOUNGE" },
                     { bank:"BRI",rek:"3209 0100 5910 500",   an:"MAINPS ID LOUNGE" },
                     { bank:"BTN",rek:"8001610044698",   an:"MAINPS ID LOUNGE" },
                     { bank:"Dana",rek:"085893129216",   an:"MAINPS ID LOUNGE" }
                 ].map(b => `
-                    <div onclick="pilihdRek(this)" style="
-                        display:flex;align-items:center;gap:12px;
-                        padding:12px 14px;margin-bottom:8px;
-                        border:2px solid #DDD6F3;border-radius:12px;
-                        cursor:pointer;transition:.2s;background:#F7F3FF;">
-                        <div style="width:48px;height:32px;background:#1E1033;border-radius:6px;
-                                    display:flex;align-items:center;justify-content:center;
-                                    color:#A78BFA;font-weight:900;font-size:11px;">${b.bank}</div>
+                    <div class="bank-row" onclick="pilihdRek(this)">
+                        <div class="bank-badge">${b.bank}</div>
                         <div>
-                            <div style="font-weight:800;font-size:14px;color:#1E1033;">${b.rek}</div>
-                            <div style="font-size:11px;color:#9580B8;">a.n. ${b.an}</div>
+                            <div class="bank-rek">${b.rek}</div>
+                            <div class="bank-an">a.n. ${b.an}</div>
                         </div>
-                        <div style="margin-left:auto;font-size:18px;">📋</div>
+                        <div class="bank-copy-icon">
+                            <i class="bi bi-clipboard-fill"></i>
+                        </div>
                     </div>
                 `).join("")}
-                <div style="margin-top:8px;padding:10px 14px;background:#FEF3C7;
-                            border-radius:10px;font-size:12px;color:#92400E;">
-                    ⚠️ Transfer sesuai nominal total. Booking dikonfirmasi setelah pembayaran diterima.
+                <div class="pay-note pay-note-warning">
+                    <i class="bi bi-exclamation-triangle-fill"></i> Transfer sesuai nominal total. Booking dikonfirmasi setelah pembayaran diterima.
                 </div>
             </div>
         `
@@ -109,20 +71,17 @@ const metodeBayar = [
         id    : "cash",
         nama  : "Cash di Kasir",
         sub   : "Bayar langsung saat tiba di lounge",
-        emoji : "💵",
+        icon  : "bi-cash-stack",
         detail: `
-            <div style="text-align:center;padding:16px 0;">
-                <div style="font-size:48px;margin-bottom:12px;">💵</div>
-                <div style="font-weight:900;font-size:16px;color:#1E1033;margin-bottom:8px;">
-                    Bayar Cash di Kasir
-                </div>
-                <div style="font-size:13px;color:#9580B8;margin-bottom:16px;">
+            <div class="qris-detail">
+                <div class="cash-icon"><i class="bi bi-cash-stack"></i></div>
+                <div class="cash-title">Bayar Cash di Kasir</div>
+                <div class="cash-sub">
                     Tunjukkan kode booking ke kasir saat tiba.<br>
                     Bayar sesuai total tagihan.
                 </div>
-                <div style="padding:12px 16px;background:#D1FAE5;border-radius:10px;
-                            font-size:13px;color:#065F46;font-weight:700;">
-                    ✅ Booking akan dikunci otomatis.<br>
+                <div class="pay-note pay-note-success">
+                    <i class="bi bi-check-circle-fill"></i> Booking akan dikunci otomatis.<br>
                     Harap tiba 10 menit sebelum jam main.
                 </div>
             </div>
@@ -155,11 +114,11 @@ document.getElementById("order-room-harga").innerHTML =
 const jamMulaiLabel = data.jamMulai.toString().padStart(2,"0") + ":00 WIB";
 document.getElementById("sum-jam-mulai").innerHTML = jamMulaiLabel;
 
-// Emoji tipe room
-let emoji = "🎮";
-if (data.tipe === "VIP")  emoji = "⭐";
-if (data.tipe === "VVIP") emoji = "👑";
-document.getElementById("order-room-emoji").innerHTML = emoji;
+// Icon tipe room
+let roomIcon = "bi-controller";
+if (data.tipe === "VIP")  roomIcon = "bi-star-fill";
+if (data.tipe === "VVIP") roomIcon = "bi-gem";
+document.getElementById("order-room-emoji").innerHTML = `<i class="bi ${roomIcon}"></i>`;
 
 // =============================================
 // RENDER KARTU DURASI
@@ -181,19 +140,19 @@ for (let i = 1; i <= 4; i++) {
 // RENDER SNACK
 // =============================================
 const snackData = [
-    { nama:"Popcorn",    emoji:"🍿", harga:5000  },
-    { nama:"Kentang",    emoji:"🍟", harga:7000  },
-    { nama:"Soft Drink", emoji:"🥤", harga:3000  },
-    { nama:"Cokelat",    emoji:"🍫", harga:4000  },
-    { nama:"Air Mineral",emoji:"💧", harga:2000  }
+    { nama:"Popcorn",    icon:"bi-basket-fill",  harga:5000  },
+    { nama:"Kentang",    icon:"bi-basket2-fill", harga:7000  },
+    { nama:"Soft Drink", icon:"bi-cup-straw",    harga:3000  },
+    { nama:"Cokelat",    icon:"bi-basket3-fill", harga:4000  },
+    { nama:"Air Mineral",icon:"bi-droplet-fill", harga:2000  }
 ];
 
 const snackGrid = document.getElementById("snack-grid");
 snackData.forEach(snack => {
     snackGrid.innerHTML += `
         <div class="snack-card" data-harga="${snack.harga}">
-            <div class="snack-check-icon">✓</div>
-            <span class="snack-emoji">${snack.emoji}</span>
+            <div class="snack-check-icon"><i class="bi bi-check-lg"></i></div>
+            <span class="snack-emoji"><i class="bi ${snack.icon}"></i></span>
             <div class="snack-name">${snack.nama}</div>
             <div class="snack-price">Rp${snack.harga.toLocaleString("id-ID")}</div>
         </div>
@@ -208,18 +167,15 @@ const payOpts = document.getElementById("pay-opts");
 metodeBayar.forEach(m => {
     payOpts.innerHTML += `
         <div class="pay-option" data-id="${m.id}" onclick="pilihMetode(this)">
-            <div class="pay-emoji">${m.emoji}</div>
+            <div class="pay-emoji"><i class="bi ${m.icon}"></i></div>
             <div>
                 <div class="pay-name">${m.nama}</div>
                 <div class="pay-sub">${m.sub}</div>
             </div>
-            <div class="pay-check">✓</div>
+            <div class="pay-check"><i class="bi bi-check-lg"></i></div>
         </div>
         <!-- Detail instruksi, tersembunyi dulu -->
-        <div id="detail-${m.id}" style="display:none;
-            margin:-8px 0 12px;padding:16px;
-            background:#F7F3FF;border:1.5px dashed #A78BFA;
-            border-radius:0 0 14px 14px;">
+        <div id="detail-${m.id}" class="pay-detail-panel" style="display:none;">
             ${m.detail}
         </div>
     `;
@@ -243,17 +199,21 @@ function pilihMetode(el) {
     // Aktifkan tombol konfirmasi
     const btn = document.getElementById("btn-konfirmasi");
     btn.disabled = false;
-    btn.innerHTML = "✅ Konfirmasi Pesanan";
+    btn.innerHTML = '<i class="bi bi-check-circle-fill"></i> Konfirmasi Pesanan';
 }
 
 // =============================================
 // FUNGSI: Klik rekening bank → copy ke clipboard
 // =============================================
 function pilihdRek(el) {
-    const norek = el.querySelector("div > div:first-child").innerText;
+    const norek = el.querySelector(".bank-rek").innerText;
+    const iconWrap = el.querySelector(".bank-copy-icon");
+
     navigator.clipboard.writeText(norek).then(() => {
-        el.querySelector("div:last-child").innerHTML = "✅";
-        setTimeout(() => el.querySelector("div:last-child").innerHTML = "📋", 2000);
+        iconWrap.innerHTML = '<i class="bi bi-clipboard-check-fill"></i>';
+        setTimeout(() => {
+            iconWrap.innerHTML = '<i class="bi bi-clipboard-fill"></i>';
+        }, 2000);
     }).catch(() => {
         alert("No. Rek: " + norek);
     });
@@ -342,7 +302,7 @@ document.getElementById("btn-konfirmasi").onclick = function () {
     const m = metodeBayar.find(x => x.id === metodeTerpilih);
     if (m) {
         const elMetode = document.getElementById("modal-metode");
-        if (elMetode) elMetode.innerHTML = m.emoji + " " + m.nama;
+        if (elMetode) elMetode.innerHTML = `<i class="bi ${m.icon}"></i> ${m.nama}`;
     }
 
     new bootstrap.Modal(document.getElementById("modal-sukses")).show();

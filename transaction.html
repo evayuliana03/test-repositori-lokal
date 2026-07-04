@@ -12,11 +12,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap"
     rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/transaction.css">
 </head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <body>
 
   <!-- ═══════════ NAVBAR ═══════════ -->
@@ -44,7 +45,7 @@
     <!-- Header Section -->
     <div class="txn-header-section">
       <div class="container-fluid px-4">
-        <div class="section-eyebrow">🛒 Transaksi</div>
+        <div class="section-eyebrow"><i class="bi bi-cart-fill"></i> Transaksi</div>
         <div class="txn-page-title">Selesaikan Pesanan</div>
         <div class="txn-page-sub">Pilih durasi, tambahan snack, dan metode pembayaran.</div>
 
@@ -53,7 +54,7 @@
           <!-- Step 1 -->
           <div class="step-item">
             <div>
-              <div class="step-circle done">✓</div>
+              <div class="step-circle done"><i class="bi bi-check-lg"></i></div>
               <div class="step-label done">Pilih Room</div>
             </div>
             <div class="step-line done"></div>
@@ -87,14 +88,14 @@
 
           <!-- 1. Durasi -->
           <div class="txn-section">
-            <div class="txn-section-title">⏰ Pilih Durasi Main</div>
+            <div class="txn-section-title"><i class="bi bi-clock-fill"></i> Pilih Durasi Main</div>
             <!-- Diisi JS -->
             <div id="dur-grid" class="dur-grid"></div>
           </div>
 
           <!-- 2. Snack -->
           <div class="txn-section">
-            <div class="txn-section-title">🍕 Tambahan Makanan & Snack</div>
+            <div class="txn-section-title"><i class="bi bi-cup-straw"></i> Tambahan Makanan & Snack</div>
             <p class="text-muted-mainps mb-3" style="font-size:13px;">
               Bisa pilih lebih dari satu. Harga ditambahkan ke total.
             </p>
@@ -104,7 +105,7 @@
 
           <!-- 3. Metode Bayar -->
           <div class="txn-section">
-            <div class="txn-section-title">💳 Metode Pembayaran</div>
+            <div class="txn-section-title"><i class="bi bi-credit-card-fill"></i> Metode Pembayaran</div>
             <!-- Diisi JS -->
             <div id="pay-opts"></div>
           </div>
@@ -117,13 +118,13 @@
           <div class="order-summary-card">
 
             <div class="order-summary-title">
-              📋 Ringkasan Pesanan
+              <i class="bi bi-receipt"></i> Ringkasan Pesanan
             </div>
 
             <!-- Room Preview -->
             <div class="order-room-preview">
               <div class="order-room-emoji" id="order-room-emoji">
-                🎮
+                <i class="bi bi-controller"></i>
               </div>
 
               <div>
@@ -228,13 +229,8 @@
               Pilih metode bayar dulu!
             </button>
 
-            <div class="text-center mt-3" style="
-        font-size:12px;
-        color:var(--muted);
-      ">
-
-              🔒 Pembayaran aman & terenkripsi
-
+            <div class="text-center mt-3 secure-note">
+              <i class="bi bi-shield-lock-fill"></i> Pembayaran aman & terenkripsi
             </div>
 
           </div>
@@ -253,7 +249,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content p-2">
         <div class="modal-body py-4 px-3 text-center">
-          <div class="modal-success-icon">🎉</div>
+          <div class="modal-success-icon"><i class="bi bi-check-circle-fill"></i></div>
           <div class="modal-success-title">Booking Berhasil!</div>
           <div class="modal-success-sub">
             Pesanan kamu sudah masuk. Tunjukkan kode ini ke kasir saat datang.
@@ -294,7 +290,7 @@
 
             <div class="d-flex justify-content-between px-2">
               <span class="text-muted-mainps">Total Bayar</span>
-              <strong class="text-purple" id="modal-total">-</strong>
+              <strong class="text-blue" id="modal-total">-</strong>
             </div>
             <div class="d-flex justify-content-between px-2 mt-1">
               <span class="text-muted-mainps">Metode Bayar</span>
@@ -345,7 +341,7 @@
           <ul class="footer-links">
             <li><a href="rooms.html"><i class="bi bi-house-door-fill"></i> Rooms</a></li>
             <li><a href="games.html"><i class="bi bi-controller"></i> Games</a></li>
-            <li><a href="reservation.html"><i class="bi bi-journal-check"></i> Reservasi<a></li>
+            <li><a href="reservation.html"><i class="bi bi-journal-check"></i> Reservasi</a></li>
             <li><a href="dashboard.html"><i class="bi bi-bar-chart-fill"></i> Dashboard</a></li>
             <li><a href="about.html"><i class="bi bi-info-circle-fill"></i> Tentang</a></li>
           </ul>

@@ -1,5 +1,5 @@
 body {
-    background: #F7F3FF;
+    background: #ffff;
 }
 
 .search-box {
@@ -56,11 +56,11 @@ body {
 
     font-size: 15px;
     font-weight: 800;
-}
+} 
 
 .game-rating {
 
-    color: #9580B8;
+    color: #8082b8;
 
     text-align: center;
 
